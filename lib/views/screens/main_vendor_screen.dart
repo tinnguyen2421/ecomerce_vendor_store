@@ -1,3 +1,4 @@
+import 'package:ecomerce_vendor_store/models/order.dart';
 import 'package:ecomerce_vendor_store/views/screens/nav_screens/earnings_screen.dart';
 import 'package:ecomerce_vendor_store/views/screens/nav_screens/edit_screen.dart';
 import 'package:ecomerce_vendor_store/views/screens/nav_screens/orders_screen.dart';
@@ -19,7 +20,7 @@ class _MainVendorScreenState extends State<MainVendorScreen> {
     const EarningsScreen(),
     const UploadScreen(),
     const EditScreen(),
-    const OrdersScreen(),
+    const OrderScreen(),
     const ProfileScreen()
   ];
 

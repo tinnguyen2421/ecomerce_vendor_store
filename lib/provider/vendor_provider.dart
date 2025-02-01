@@ -4,14 +4,18 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class VendorProvider extends StateNotifier<Vendor?> {
   VendorProvider()
       : super(Vendor(
-            id: '',
-            fullName: '',
-            email: '',
-            state: '',
-            city: '',
-            locality: '',
-            role: '',
-            password: ''));
+          id: '',
+          fullName: '',
+          email: '',
+          state: '',
+          city: '',
+          locality: '',
+          role: '',
+          password: '',
+          token: '',
+          storeImage: '',
+          storeDescription: '',
+        ));
   //getter method to extract value from an object
   Vendor? get vendor => state;
   //Method to set vendor user state from json
@@ -20,7 +24,7 @@ class VendorProvider extends StateNotifier<Vendor?> {
     state = Vendor.fromJson(vendorJson);
   }
 
-  void SignOut() {
+  void signOut() {
     state = null;
   }
 }

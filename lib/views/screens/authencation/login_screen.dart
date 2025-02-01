@@ -3,14 +3,15 @@ import 'dart:math';
 import 'package:ecomerce_vendor_store/controllers/vendor_auth_controller.dart';
 import 'package:ecomerce_vendor_store/views/screens/authencation/register_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends ConsumerStatefulWidget {
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  ConsumerState<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginScreenState extends ConsumerState<LoginScreen> {
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   final VendorAuthController _vendorAuthController = VendorAuthController();
   late String email;
@@ -22,7 +23,8 @@ class _LoginScreenState extends State<LoginScreen> {
       isLoading = true;
     });
     await _vendorAuthController
-        .signInVendor(context: context, email: email, password: password)
+        .signInVendor(
+            context: context, email: email, password: password, ref: ref)
         .whenComplete(() {
       setState(() {
         isLoading = false;
